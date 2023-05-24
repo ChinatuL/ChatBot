@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ChatBot</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/252caf6e4e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="container">
+        <h1 class="title">MY CHATBOT</h1>
+        <div class="chat-container">
+            <div class="ai-chat chat">
+                <div class="ai-avatar avatar">
+                    <i class="fa-solid fa-cat"></i>
+                </div>
+                <div class="ai-message">Hello Lucia, How are you today?</div>
+            </div>
+            <div class="user-chat chat">
+                <div class="user-avatar avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="user-message">Hello. Good morning</div>
+            </div>
+            <div class="chat-box">
+                <label for="chat-input" class="visually-hidden">Chat</label>
+                <input type="text" id="chat-input" name="chat-box" placeholder="Chat..." class="chat-input">
+                <button type="submit" aria-label="Send message" class="submit-btn" disabled><i class="fa-sharp fa-regular fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
