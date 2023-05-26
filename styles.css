@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,88 +13,93 @@ body {
     align-items: center;
     width: 100vw;
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
-}
-
-
-.title {
-    font-size: 3rem;
-    padding-bottom: 2rem;
-    font-weight: 700;
+    font-size: 0.8rem;
 }
 
 .container {
+    background-color: hsl(0, 19%, 75%);
+    height: 450px;
+    width: 350px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.chat-header {
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #243fe9 74%);
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+.chat-body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    margin: 0 auto;
+    align-items: flex-end;
+    height: 350px;
+    padding: 0.5rem 1rem;
+    overflow-y: auto;
 }
 
-
-.chat {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 1rem;
-    width: max-content;
-}
-
-.user-chat {
-    flex-direction: row-reverse;
-    position: relative;
-    left: 70%;
-    background-color: #601a35;
+.user-message {
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #243fe9 74%);
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
     color: white;
+    border-radius: 15px 15px 5px 15px;
 }
 
-
-.ai-chat {
-    position: relative;
-    right: 70%;
-    background-color: #c5c6d0;
+.bot-message {
+    background-color: rgb(210, 210, 210);
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px 15px 15px 15px;
+    align-self: flex-start;
 }
 
-.chat-box {
-    position: relative;
-    padding-top: 2rem;
+.faqs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-.visually-hidden {
-  height: 1px; 
-  overflow: hidden;
-  width: 1px;
-  position: absolute;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  white-space: nowrap;
+.faqs > div {
+    margin-top: 0.5rem;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0.5rem;
+    border: 1px solid black;
+    font-size: 0.7rem;
+    cursor: pointer;
 }
 
-.chat-input {
-    padding: 0.8rem 1rem;
-    width: 100%;
-    border-radius: 0.5rem;
+.form {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-field {
+    width: 90%;
+    font: 400 1rem "Poppins", sans-serif;
+    padding: 0 1rem;
+    border-radius: 7px;
+    border: 1px solid rgb(210, 210, 210);
+}
+
+.input-field:focus, .input-field:active {
     outline: none;
-    border: 1px solid #601a35;
-    font: 400 1rem 'Poppins', sans-serif;
+    border: 2px solid rgb(48, 61, 203);
 }
 
 .submit-btn {
-    position: absolute;
-    right: 1rem;
-    top: 3rem;
     background: transparent;
     border: none;
+    margin-left: -2rem;
     cursor: pointer;
-    color: #601a35;
-    font-size: 1rem;
-    transition: all 0.3s ease-in-out;
 }
 
-.submit-btn:hover {
-    opacity: 80%;
-}
