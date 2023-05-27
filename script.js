@@ -1,7 +1,13 @@
+const chatBotBtn = document.querySelector(".chatbot-btn")
+const chatContainer = document.querySelector(".chat-container")
 const chatBody = document.querySelector(".chat-body");
 const chatInput = document.getElementById("text-input");
 const form = document.querySelector(".form");
 const sumbitBtn = document.querySelector(".submit-btn");
+
+chatBotBtn.addEventListener("click", () => {
+    chatContainer.classList.toggle("show-chat")
+})
 
 chatInput.addEventListener("input", () => {
     if (!chatInput.value.trim() == "") {
@@ -52,6 +58,7 @@ const renderChatBotMessage = () => {
             botMessageElement.textContent = responseArr[2][`answer${index + 1}`]
             botMessageElement.classList.add("bot-message")
             chatBody.append(botMessageElement)
+            scrollPosition()
         })
     })
 };
@@ -63,3 +70,7 @@ const clearInput = () => {
 const getChatBotResponse = () => {
     return responseArr[0]["hello"];
 };
+
+const scrollPosition = () => {
+    chatBody.scrollTop = chatBody.scrollHeight
+}

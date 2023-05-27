@@ -20,24 +20,35 @@
         <script src="response.js"></script>
     </head>
     <body>
-        <main class="container">
-            <div class="chat-header">
-                <h1>Chat</h1>
+        <main class="main">
+            <button type="button" aria-label="Open chatbot" class="chatbot-btn">
+                <i class="fa-regular fa-comment fa-2x"></i>
+            </button>
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h1>Chat</h1>
+                </div>
+                <div class="chat-body"></div>
+                <form class="form" novalidate>
+                    <input
+                        type="text"
+                        id="text-input"
+                        name="Chat"
+                        aria-label="Enter your message here"
+                        placeholder="Chat"
+                        class="input-field"
+                        autofocus
+                    />
+                    <button
+                        type="submit"
+                        aria-label="Send message"
+                        class="submit-btn"
+                        disabled
+                    >
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </button>
+                </form>
             </div>
-            <div class="chat-body"></div>
-            <form class="form" novalidate>
-                <input
-                    type="text"
-                    id="text-input"
-                    name="Chat"
-                    aria-label="Enter your message here"
-                    placeholder="Chat"
-                    class="input-field" autofocus
-                />
-                <button type="submit" aria-label="Send message" class="submit-btn" disabled>
-                    <i class="fa-regular fa-paper-plane"></i>
-                </button>
-            </form>
         </main>
     </body>
 </html>

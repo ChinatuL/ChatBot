@@ -18,27 +18,46 @@ body {
     font-size: 0.8rem;
 }
 
-.container {
-    background-color: hsl(0, 19%, 75%);
-    height: 450px;
+.chatbot-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #243fe9 74%);
+    border: none;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.chat-container {
+    position: relative;
+    background-color: white;
+    border-radius: 1rem;
+    height: 0;
     width: 350px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 25px 1px rgba(0, 0, 0, 0.1);
+    transition: height 0.5s ease;
 }
 
 .chat-header {
+    border-radius: 1rem 1rem 0 0;
     background-color: #2a2a72;
     background-image: linear-gradient(315deg, #2a2a72 0%, #243fe9 74%);
     color: white;
     padding: 0.5rem 1rem;
+    display: none;
 }
 
 .chat-body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    height: 350px;
-    padding: 0.5rem 1rem;
+    height: 0;
     overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 .user-message {
@@ -63,7 +82,7 @@ body {
 .faqs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -72,15 +91,22 @@ body {
     border-radius: 10px;
     width: fit-content;
     padding: 0.5rem;
-    border: 1px solid black;
+    border-image: linear-gradient(315deg, #2a2a72 0%, #243fe9 74%) 10%;
+    border-width: 1px;
+    border-style: solid;
     font-size: 0.7rem;
     cursor: pointer;
 }
 
+.faqs > div:hover {
+    transform: scale(1.1, 1.1);
+}
+
 .form {
-    height: 40px;
-    display: flex;
+    position: relative;
+    display: none;
     justify-content: center;
+    height: 0;
 }
 
 .input-field {
@@ -91,15 +117,47 @@ body {
     border: 1px solid rgb(210, 210, 210);
 }
 
-.input-field:focus, .input-field:active {
+.input-field:focus,
+.input-field:active {
     outline: none;
-    border: 2px solid rgb(48, 61, 203);
+    border: 1px solid rgb(48, 61, 203);
 }
 
 .submit-btn {
+    position: absolute;
+    right: 2rem;
+    top: 0.8rem;
     background: transparent;
     border: none;
-    margin-left: -2rem;
     cursor: pointer;
 }
 
+.show-chat {
+    height: 450px;
+}
+
+.show-chat .chat-header {
+    display: block;
+}
+
+.show-chat .chat-body {
+    height: 330px;
+    padding: 0.5rem 1rem;
+}
+
+.show-chat .form {
+    display: flex;
+    height: 40px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(210, 210, 210); 
+}
